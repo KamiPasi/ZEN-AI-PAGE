@@ -1,0 +1,21 @@
+# Dependencies
+node_modules
+.pnpm-debug.log*
+
+# Production
+docs/.vitepress/dist
+docs/.vitepress/cache
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# System Files
+.DS_Store
+Thumbs.db

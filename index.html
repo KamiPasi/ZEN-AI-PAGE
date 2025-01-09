@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZEN AI - 您的GPT API服务专家</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-light: #3b82f6;
+            --secondary-color: #6366f1;
+            --background-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #1e293b;
+            --text-light: #64748b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding: 4rem 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 20px;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .highlights ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .highlights li {
+            padding: 1rem;
+            background: rgba(37, 99, 235, 0.1);
+            border-radius: 12px;
+            font-weight: 500;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .highlights li:hover {
+            background: rgba(37, 99, 235, 0.2);
+            transform: scale(1.05);
+        }
+
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .step {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .step-number {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .tools-section ul {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            list-style: none;
+        }
+
+        .tools-section li a {
+            display: block;
+            padding: 1rem;
+            background: rgba(37, 99, 235, 0.1);
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        .tools-section li a:hover {
+            background: rgba(37, 99, 235, 0.2);
+            transform: scale(1.05);
+        }
+
+        .monitor-section iframe {
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin: 2rem 0;
+        }
+
+        .tokens-note {
+            text-align: center;
+            margin: 2rem 0;
+            font-size: 1.1rem;
+            padding: 1rem;
+            background: rgba(37, 99, 235, 0.1);
+            border-radius: 12px;
+        }
+
+        .warning {
+            color: #ef4444;
+            font-weight: 500;
+            padding: 1rem;
+            background: rgba(239, 68, 68, 0.1);
+            border-radius: 12px;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .card {
+                padding: 1.5rem;
+            }
+        }
+
+        section {
+            margin-bottom: 3rem;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--primary-light);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🎊 欢迎来到ZEN</h1>
+            <p class="subtitle">您的GPT API服务专家，一起开启智能化的未来之旅🌌</p>
+        </header>
+
+        <main>
+            <section class="sites">
+                <div class="card">
+                    <h3>🌐 站点信息</h3>
+                    <p>主站点: <a href="https://zen-ai.top">https://zen-ai.top</a></p>
+                    <p>备用子站点: <a href="https://zen.zeabur.app">https://zen.zeabur.app</a></p>
+                </div>
+            </section>
+
+            <section class="highlights">
+                <div class="card">
+                    <h3>💎 核心优势</h3>
+                    <ul>
+                        <li>低至1元一刀</li>
+                        <li>官方倍率</li>
+                        <li>稳定! 低价! 高速!</li>
+                        <li>支持千万级并发</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="price-section">
+                <h2>🥰 查看全部模型倍率</h2>
+                <div class="card">
+                    <a href="/pricing" class="price-link">模型价格</a>
+                </div>
+            </section>
+
+            <section class="monitor-section">
+                <h2>⏱️ 24小时实时监控</h2>
+                <iframe 
+                    src="https://uptime.zen-ai.top/status/1" 
+                    width="100%" 
+                    height="600px" 
+                    frameborder="0" 
+                    allowfullscreen>
+                </iframe>
+                <p class="tokens-note">1k tokens ≈ 552个汉字, 费率与官方一致，<strong>低至1元一刀</strong>，相当于官方价格的<strong>1折</strong>！(快涨价了, 先到先得!)</p>
+            </section>
+
+            <section class="steps-section">
+                <h2>💰 使用步骤</h2>
+                <div class="steps-container">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <p>注册账号(赠送0.1测试额度), 暂只支持QQ邮箱注册</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <p>前往<a href="/topup">钱包</a>使用支付宝在线充值或前往<a href="https://shop.zen-ai.top/">发卡网</a>购买兑换码</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <p>获得兑换码后到<a href="/topup">充值页面</a>使用兑换码进行兑换</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <p>充值成功后, 到<a href="/token">令牌页面</a>添加令牌, 设置有效期和额度</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <p>添加成功后, 点击令牌上的聊天按钮即可开启聊天</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">6</div>
+                        <p>点击复制即可复制key, 可在第三方平台使用, 在需要填写api.openai.com的地方替换成zen-ai.top即可</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="tools-section">
+                <h2>🛠️ 开放工具</h2>
+                <div class="card">
+                    <h3>可用UI工具</h3>
+                    <ul>
+                        <li><a href="https://nextweb.zen-ai.top">NextChat</a></li>
+                        <li><a href="https://lobe.zen-ai.top/">LobeChat</a></li>
+                        <li><a href="https://talk.zen-ai.top">chatgpt-web-midjourney-proxy</a></li>
+                    </ul>
+                    <p>查看<a href="https://zenai.apifox.cn">开发文档</a></p>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <section class="contact-info">
+                <div class="card">
+                    <h3>📞 联系方式</h3>
+                    <p>售后交流群TG: <a href="https://t.me/+dZCOjnNUZ70wMDQ1">ZENAI</a></p>
+                    <p>QQ交流群: 148190284</p>
+                    <p class="warning">请勿将本站用于非法用途, 一经发现将做封号处理</p>
+                </div>
+            </section>
+        </footer>
+    </div>
+</body>
+</html>

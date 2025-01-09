@@ -1,0 +1,597 @@
+:root {
+  --primary-color: #2563eb;
+  --primary-light: #3b82f6;
+  --secondary-color: #6366f1;
+  --background-color: #f8fafc;
+  --card-bg: #ffffff;
+  --text-color: #1e293b;
+  --text-light: #64748b;
+}
+
+
+body {
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  color: var(--primary-color);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--primary-light);
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 2rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.warning {
+  color: #ef4444;
+  font-weight: 500;
+  padding: 1rem;
+  background: rgba(239, 68, 68, 0.1);
+  border-radius: 12px;
+  margin-top: 1rem;
+}
+
+/* 隐藏导航和侧边栏 */
+.VPNav,
+.VPSidebar {
+  display: none !important;
+}
+
+/* 调整主内容区域宽度 */
+.VPContent {
+  padding-top: 0 !important;
+}
+
+.VPDoc {
+  padding: 0 !important;
+}
+
+.container {
+  max-width: 100% !important;
+}
+
+/* 首页特殊样式 */
+.VPHome {
+  padding-bottom: 0 !important;
+}
+
+.name, .text {
+  background: linear-gradient(315deg, var(--primary-color) 25%, var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient 6s ease-in-out infinite;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* 修改按钮样式 */
+.VPHero .VPButton {
+  padding: 12px 24px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  min-width: 140px;
+}
+
+.VPHero .VPButton.brand {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  border: none;
+}
+
+.VPHero .VPButton.brand:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.VPHero .VPButton.alt {
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.VPHero .VPButton.alt:hover {
+  background: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* 移除监控卡片，因为已经转为按钮 */
+.monitor-card {
+  display: none;
+}
+.step-card .icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.step-card .title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.step-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.step-card .icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.step-card .title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.step-card .details {
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+.step-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.tool-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-decoration: none;
+  transition: all 0.3s;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.tool-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.tool-tag {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--primary-color);
+  color: white;
+  padding: 0.2rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1rem;
+  }
+  
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .monitor-card iframe {
+    height: 300px;
+  }
+}
+
+/* Hero按钮样式调整 */
+.VPHero .actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+/* 确保标语显示在正确位置 */
+.hero-tagline {
+  position: relative;
+  z-index: 10;
+}
+
+/* 修改hero部分的样式 */
+.VPHero .name,
+.VPHero .text,
+.VPHero .tagline {  /* 使用 tagline 替代 text2 */
+  background: linear-gradient(315deg, var(--primary-color) 25%, var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient 6s ease-in-out infinite;
+}
+
+.VPHero .tagline {  /* tagline 特殊样式 */
+  font-size: 1.4rem;
+  margin-top: 0.5rem;
+  opacity: 0.9;
+}
+
+/* 调整hero内容的间距 */
+.VPHero .container {
+  gap: 0.5rem;
+}
+
+/* 使用步骤样式 */
+.steps-section {
+  margin: 3rem auto;
+  max-width: 1200px;
+  padding: 4rem 2rem;
+  background: var(--background-color);
+}
+
+.steps-section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  background: linear-gradient(315deg, var(--primary-color) 25%, var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.steps-container {
+  display: grid;
+  gap: 2rem;
+  padding: 1.5rem;
+}
+
+.step {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: var(--vp-c-bg-soft);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.step:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #647eff, #2b3f9e);
+  color: white;
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 2px 6px rgba(100,126,255,0.3);
+  flex-shrink: 0;
+}
+
+.step p {
+  margin: 0;
+  line-height: 1.7;
+  color: var(--vp-c-text-1);
+}
+
+.step a {
+  color: var(--vp-c-brand);
+  font-weight: 500;
+  text-decoration: none;
+  padding: 0 4px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+}
+
+.step a:hover {
+  border-bottom-color: var(--vp-c-brand);
+}
+
+@media (min-width: 640px) {  .steps-container {    grid-template-columns: repeat(2, 1fr);  }}@media (min-width: 960px) {  .steps-container {    grid-template-columns: repeat(3, 1fr);  }    .step {    height: 100%;  }}@media (max-width: 768px) {  .steps-section {    padding: 2rem 1rem;  }    .steps-section h2 {    font-size: 2rem;  }
+  
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 添加 Hero 图片容器样式 */
+.VPHero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.VPHero .image-container {
+  margin-top: 2rem;
+}
+
+.VPHero .image {
+  position: relative;
+  z-index: 1;
+}
+
+.VPHero .image::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 192px;
+  height: 192px;
+  background: var(--vp-home-hero-image-background-image);
+  border-radius: 50%;
+  filter: var(--vp-home-hero-image-filter);
+}
+
+.VPHero .image-container {
+  position: relative;
+  margin-top: 2rem;
+  z-index: 2;
+}
+
+/* 确保图片在渐变背景之上 */
+.VPHero .image-bg {
+  position: relative;
+  z-index: 3;
+}
+
+@media (min-width: 640px) {
+  .VPHero .image::before {
+    width: 256px;
+    height: 256px;
+  }
+}
+
+@media (min-width: 960px) {
+  .VPHero .image::before {
+    width: 320px;
+    height: 320px;
+  }
+}
+
+/* Hero image styles */
+.VPHero.has-image .image-container {
+  position: relative;
+  margin-top: 2rem;
+  z-index: 1;
+}
+
+.VPHero.has-image .image-container::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 192px;
+  height: 192px;
+  background: var(--vp-home-hero-image-background-image);
+  border-radius: 50%;
+  filter: var(--vp-home-hero-image-filter);
+}
+
+.VPHero.has-image .image-bg {
+  position: relative;
+  z-index: 2;
+}
+
+@media (min-width: 640px) {
+  .VPHero.has-image .image-container::before {
+    width: 256px;
+    height: 256px;
+  }
+}
+
+@media (min-width: 960px) {
+  .VPHero.has-image .image-container::before {
+    width: 320px;
+    height: 320px;
+  }
+}
+
+/* 警告样式 */
+.warning-section {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+}
+
+.warning-box {
+  background: #ffffff;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 16px;
+  padding: 2rem;
+  color: #dc2626;
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.warning-box::before {
+  content: '⚠️';
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 100px;
+  opacity: 0.1;
+  transform: rotate(15deg);
+  pointer-events: none;
+}
+
+.warning-box h3 {
+  color: #dc2626;
+  font-size: 1.75rem;
+  margin: 0 0 1.5rem 0;
+  text-align: center;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  animation: warningPulse 2s ease-in-out infinite;
+}
+
+.warning-box p {
+  margin: 1rem 0;
+  line-height: 1.8;
+  font-size: 1.1rem;
+  color: #991b1b;
+  text-align: justify;
+  padding: 0 1rem;
+  position: relative;
+}
+
+@keyframes warningPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@media (max-width: 768px) {
+  .warning-section {
+    padding: 0 1rem;
+    margin: 2rem auto;
+  }
+  
+  .warning-box {
+    padding: 1.5rem;
+  }
+  
+  .warning-box h3 {
+    font-size: 1.5rem;
+  }
+  
+  .warning-box p {
+    font-size: 1rem;
+    padding: 0;
+  }
+  
+  .warning-box::before {
+    font-size: 80px;
+  }
+}
+
+/* 联系方式样式 */
+.contact-section {
+  max-width: 1200px;
+  margin: 4rem auto 2rem;
+  padding: 0 2rem;
+}
+
+.contact-box {
+  background: #ffffff;
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  border-radius: 16px;
+  padding: 2rem;
+  color: var(--text-color);
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.1);
+}
+
+.contact-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.1rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--background-color);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+  transform: translateX(5px);
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.contact-item .icon {
+  font-size: 1.5rem;
+}
+
+.contact-item a {
+  color: var(--primary-color);
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.contact-item a:hover {
+  color: var(--primary-light);
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 0 1rem;
+    margin: 2rem auto;
+  }
+  
+  .contact-box {
+    padding: 1.5rem;
+  }
+  
+  .contact-item {
+    font-size: 1rem;
+  }
+}
