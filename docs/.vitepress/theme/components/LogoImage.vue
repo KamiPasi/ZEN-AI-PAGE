@@ -9,22 +9,12 @@ const props = defineProps({
     default: 'Logo'
   }
 })
-
-// 添加图片路径处理
-const imgSrc = computed(() => {
-  // 如果是完整URL则直接使用
-  if (props.src.startsWith('http')) {
-    return props.src
-  }
-  // 否则确保使用相对于根目录的路径
-  return props.src.startsWith('/') ? props.src : `/${props.src}`
-})
 </script>
 
 <template>
   <div class="logo-container">
     <div class="glow-effect"></div>
-    <img :src="imgSrc" :alt="alt" class="logo-image">
+    <img :src="src" :alt="alt" class="logo-image">
   </div>
 </template>
 
