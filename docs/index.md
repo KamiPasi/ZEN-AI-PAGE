@@ -10,7 +10,7 @@ hero:
   actions:
     - theme: brand
       text: 立即开始
-      link: /login
+      link: https://zen-ai.top/login
     - theme: alt
       text: 实时监控
       link: https://uptime.zen-ai.top/status/1
@@ -24,7 +24,7 @@ features:
     details: 支持千万级并发，稳定可靠的服务保障
   - icon: 🛡️
     title: 稳定可靠
-    details: 已持续运营三年, 拒绝跑路
+    details: 已持续运营两年半, 拒绝跑路
 ---
 
 <div class="steps-section">
@@ -38,17 +38,17 @@ features:
     <div class="step-card">
       <div class="icon">2️⃣</div>
       <div class="title">充值方式</div>
-      <div class="details">前往<a href="/topup">钱包</a>使用支付宝在线充值或前往<a href="https://shop.zen-ai.top/">发卡网</a>购买兑换码</div>
+      <div class="details">前往<a href="https://zen-ai.top/topup">钱包</a>使用支付宝在线充值或前往<a href="https://shop.zen-ai.top/">发卡网</a>购买兑换码</div>
     </div>
     <div class="step-card">
       <div class="icon">3️⃣</div>
       <div class="title">兑换充值</div>
-      <div class="details">获得兑换码后到<a href="/topup">充值页面</a>使用兑换码进行兑换</div>
+      <div class="details">获得兑换码后到<a href="https://zen-ai.top/topup">充值页面</a>使用兑换码进行兑换</div>
     </div>
     <div class="step-card">
       <div class="icon">4️⃣</div>
       <div class="title">创建令牌</div>
-      <div class="details">充值成功后, 到<a href="/token">令牌页面</a>添加令牌, 设置有效期和额度</div>
+      <div class="details">充值成功后, 到<a href="https://zen-ai.top/token">令牌页面</a>添加令牌, 设置有效期和额度</div>
     </div>
     <div class="step-card">
       <div class="icon">5️⃣</div>
