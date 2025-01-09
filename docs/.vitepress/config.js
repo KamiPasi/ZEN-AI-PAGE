@@ -1,7 +1,8 @@
 export default {
   title: 'ZEN AI',
   description: '您的GPT API服务专家',
-  base: '/',
+  base: '/', // 如果部署在根目录，使用 '/'
+  // base: '/docs/', // 如果部署在子目录，使用 '/docs/'
   head: [
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
