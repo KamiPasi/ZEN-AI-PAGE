@@ -1,16 +1,17 @@
 export default {
   title: 'ZEN AI',
   description: '您的GPT API服务专家',
-  base: '/', // 如果部署在根目录，使用 '/'
-  // base: '/docs/', // 如果部署在子目录，使用 '/docs/'
+  // 确保使用根路径
+  base: '/',
   head: [
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
   ],
   themeConfig: {
-    nav: [], // 空数组而不是 false
-    sidebar: [], // 空数组而不是 false
-    logo: '/logo.png',
+    nav: [],
+    sidebar: [],
+    // 修改 logo 路径，确保以绝对路径方式引用
+    logo: './logo.png', // 或使用 'logo.png'
   },
   appearance: false,
   lastUpdated: false,
