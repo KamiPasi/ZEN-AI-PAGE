@@ -1,6 +1,7 @@
 export default {
   title: 'ZEN AI',
   description: '您的GPT API服务专家',
+  base: '/',
   head: [
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
