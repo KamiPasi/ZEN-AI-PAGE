@@ -17,15 +17,18 @@ hero:
       link: https://uptime.zen-ai.top/status/1
 
 features:
-  - icon: 💎
-    title: 超低价格
-    details: 低至1元一刀，相当于官方价格的1折！
-  - icon: ⚡️
-    title: 极致性能
-    details: 支持千万级并发，稳定可靠的服务保障
-  - icon: 🛡️
-    title: 稳定可靠
-    details: 已持续运营两年半, 拒绝跑路
+  - icon: 
+      src: /cat1.png
+    title: 💰 超低价格
+    details: 低至1元一刀，相当于官方价格的1折！为您的AI应用提供最具性价比的解决方案。
+  - icon: 
+      src: /cat2.png
+    title: ⚡ 极致性能
+    details: 采用分布式架构，支持千万级并发访问，99.99%的可用性保证，为您的业务保驾护航。
+  - icon: 
+      src: /cat3.png
+    title: 🛡️ 稳定可靠
+    details: 已持续稳定运营两年半，专业的运维团队24/7在线保障，让您使用更放心。
 ---
 
 <div class="steps-section">

@@ -13,21 +13,24 @@
 <style scoped>
 .animation-title {
   opacity: 0;
-  animation: fadeIn 1s ease forwards;
+  animation: fadeIn 1.2s ease forwards;
 }
 
 .gradient-text {
   background: -webkit-linear-gradient(
     315deg,
-    rgb(210, 86, 53) 10%,
-    #647eff 50%,
-    rgb(238, 224, 112) 90%
+    #6A92CB 0%,    
+    #0074f2 25%,
+    #87CAF6 50%,   
+    #ff795c 75%,  
+    #CACED6 100%
   );
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-size: 400% 400%;
-  animation: gradient 5s ease infinite;
+  background-size: 300% 300%;
+  animation: gradient 8s ease infinite;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 @keyframes fadeIn {
@@ -45,11 +48,9 @@
   0% {
     background-position: 0% 50%;
   }
-
   50% {
     background-position: 100% 50%;
   }
-
   100% {
     background-position: 0% 50%;
   }
@@ -59,12 +60,19 @@
 .text {
   margin: 0;
   max-width: 392px;
-  letter-spacing: -0.4px;
+  letter-spacing: 0.5px;
   line-height: 40px;
   font-size: 32px;
-  font-weight: 700;
+  font-weight: 800;
   white-space: pre-wrap;
+  transform: scale(1);
+  transition: transform 0.3s ease;
 }
+
+.name:hover {
+  transform: scale(1.02);
+}
+
 @media (min-width: 640px) {
   .name,
   .text {

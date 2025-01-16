@@ -606,3 +606,39 @@ a:hover {
     font-size: 1rem;
   }
 }
+
+/* .vitepress/theme/custom.css 中添加以下样式 */
+
+.VPFeatures {
+  position: relative;
+  padding: 4rem 0;
+  background-color: #ffffff !important; /* 强制使用纯白色 */
+}
+
+.VPFeatures .item {
+  position: relative;
+  flex: 1 1 300px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.08); /* 更淡的边框 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03); /* 更柔和的阴影 */
+}
+
+/* 确保没有其他背景色干扰 */
+.VPFeatures .container,
+.VPFeatures .items {
+  background-color: transparent;
+}
+
+.VPFeatures .item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* 确保没有其他背景色干扰 */
+.VPFeatures .container,
+.VPFeatures .items {
+  background-color: transparent;
+}
